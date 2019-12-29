@@ -5,17 +5,65 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync(process.env.DB_NAME);
 const db = low(adapter);
 // saved data 
+
+exports.nextSeason = (season) => {
+  return new Promise((resolve, reject) => {
+    let res0 = db.set('save_data.frame', 1).write();
+    let res1 = db.set('save_data.episode', 1).write();
+    let res2 = db.set('save_data.season', season+1).write();
+    return resolve(res2);
+  });
+};
+exports.nextEpisode = (episode) => {
+  return new Promise((resolve, reject) => {
+    let res0 = db.set('save_data.frame', 1).write();
+    let res1 = db.set('save_data.episode', episode+1).write();
+    return resolve(res1);
+  });
+};
+exports.nextFrame = (frame) => {
+  return new Promise((resolve, reject) => {
+    let res = db.set('save_data.frame', frame+1).write();
+    return resolve(res);
+  });
+};
 exports.getSaved = () => {
   return new Promise((resolve, reject) => {
     let res = db.get('save_data').value();
     resolve(res);
   });
 };
+// episodios 
+exports.getEpisodesCount = (season) => {
+  return new Promise((resolve, reject) =>{
+    let res = db.get(`seasons[${season-1}].episodes`).value();
+    resolve(res);
+  });
+};
+/**
+ * @param {number} season Temporada
+ * @param {number} episodio Numero del episodio
+ */
+exports.getNombreEpisodio = (season, episode) => {
+  return new Promise((resolve, reject) => {
+    let res = db.get(`seasons[${season-1}].episode[${episode-1}]`).value();
+    resolve(res);
+  });
+};
 // temporadas 
-exports.getTemporadas = () => {
+/** Informacion de una temporada */
+exports.getTemporadaData = (season) => {
+  return new Promise((resolve, reject) => {
+    let res = db.get(`seasons[${season-1}]`).value();
+    resolve(res);
+  });
+};
+/** Obtener todas las temporadas  */
+exports.getTemporadas = (count) => {
   return new Promise((resolve, reject) => {
     let res = db.get('seasons').value();
-    resolve(res);
+    if (count) return resolve(res.length);
+    return resolve(res);
   });
 };
 // disponibilidad 

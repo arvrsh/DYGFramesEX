@@ -47,10 +47,9 @@ exports.fbPostImage = (file, message) => {
   return new Promise((resolve, reject) => {
     FB.api('me/photos', 'post', { source: fs.createReadStream(file), caption: message }, res => {
       if (!res || res.error) {
-        console.log(!res ? 'error' : res.error);
-        reject('error');
+        return reject(!res ? 'error': res.error);
       }
-      resolve(res);
+      return resolve(res);
     });
   });
 };
