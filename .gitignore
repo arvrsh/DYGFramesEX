@@ -1,3 +1,7 @@
+database.json
+vid/
+.vscode/
+yarn.lock
 # Logs
 logs
 *.log

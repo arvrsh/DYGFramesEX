@@ -1,0 +1,12 @@
+{
+  "name": "DyG_typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "arvrsh",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fb": "^2.0.0",
+    "lowdb": "^1.0.0"
+  }
+}

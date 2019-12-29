@@ -1,0 +1,18 @@
+{
+    "name": "Diego y Glot",
+    "disponible": false,
+    "seasons": [
+        {
+            "number": 1,
+            "episodes": 1,
+            "episode": [
+                "Test"
+            ]
+        }
+    ],
+    "save_data": {
+        "season": 1,
+        "episode": 1,
+        "frame": 1
+    }
+}
