@@ -15,6 +15,7 @@
     "save_data": {
         "season": 1,
         "episode": 1,
-        "frame": 1
+        "frame": 1,
+        "album_id": ""
     }
 }

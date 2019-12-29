@@ -6,6 +6,12 @@ const adapter = new FileSync(process.env.DB_NAME);
 const db = low(adapter);
 // saved data 
 
+exports.setAlbumId = (albumid) => {
+  return new Promise((resolve, reject) => {
+    let res = db.set('save_data.album_id', albumid).write();
+    resolve(res);
+  });
+};
 /** Se mueve a la siguiente temporada
  * @param {number} season Temporada actual
  */

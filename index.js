@@ -4,6 +4,7 @@ const std = require('./core/_std');
 
 main();
 
+/** Main process  */
 async function main() {
     /* Dato util para el log */
     console.log('[i] ' + new Date().toLocaleString());
@@ -15,18 +16,20 @@ async function main() {
 
 }
 
+/** post frame main process  */
 async function post_frame() {
     let _data = await database.getSaved();
     let _countepisode = await database.getEpisodesCount(_data.season);
     let _countseasons = await database.getTemporadas(true);
     let _count = await std.contarFrames(_data.season, _data.episode);
     let _framename = await std.getFrameName(_data.season, _data.episode, _data.frame);
+    let _episodename = await database.getNombreEpisodio(_data.season, _data.episode);
     let _message = "";
     _message += `Temporada: ${_data.season} - `;
-    _message += `Episodio: ${await database.getNombreEpisodio(_data.season, _data.episode)} - `;
+    _message += `Episodio: ${_episodename} - `;
     _message += `Frame  ${_data.frame}/${_count}`;
-
-    await facebook.fbPostImage(_framename, _message)
+    
+    await facebook.fbPostImage(_framename, _message, null) // null means no album 
         .then(async (res) => {
             console.log(_message);
             console.log('[f]: ', res.id);
@@ -37,7 +40,7 @@ async function post_frame() {
         });
 }
 
-
+/** Step next frame  */
 async function next_frame(_data, _countepisode, _countseasons, _count) {
     if (_data.frame + 1 > _count) {
         console.log(`[i] Se terminaron los frames - Siguiente Episodio`);
