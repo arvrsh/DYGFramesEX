@@ -6,6 +6,9 @@ const adapter = new FileSync(process.env.DB_NAME);
 const db = low(adapter);
 // saved data 
 
+/** Se mueve a la siguiente temporada
+ * @param {number} season Temporada actual
+ */
 exports.nextSeason = (season) => {
   return new Promise((resolve, reject) => {
     let res0 = db.set('save_data.frame', 1).write();
@@ -14,6 +17,10 @@ exports.nextSeason = (season) => {
     return resolve(res2);
   });
 };
+/**
+ * Se mueve al siguiente episodo
+ * @param {number} episode episodio actual
+ */
 exports.nextEpisode = (episode) => {
   return new Promise((resolve, reject) => {
     let res0 = db.set('save_data.frame', 1).write();
@@ -21,12 +28,21 @@ exports.nextEpisode = (episode) => {
     return resolve(res1);
   });
 };
+
+/**
+ * Se mueve al siguiente frame
+ * @param {number} frame cuadro actual
+ */
 exports.nextFrame = (frame) => {
   return new Promise((resolve, reject) => {
     let res = db.set('save_data.frame', frame+1).write();
     return resolve(res);
   });
 };
+/** 
+ * Obtiene la data guardada en la database
+ * @async
+ */
 exports.getSaved = () => {
   return new Promise((resolve, reject) => {
     let res = db.get('save_data').value();

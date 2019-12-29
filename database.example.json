@@ -1,12 +1,14 @@
 {
     "name": "Diego y Glot",
-    "disponible": false,
+    "disponible": true,
     "seasons": [
         {
             "number": 1,
-            "episodes": 1,
+            "episodes": 3,
             "episode": [
-                "Test"
+                "Episodio 1",
+                "Episodio 2",
+                "Episodio 3"
             ]
         }
     ],
