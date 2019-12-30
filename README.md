@@ -1,7 +1,8 @@
-# DyGFramesEX
-EX de **Extendido**, **EXtrapulento**, ~**Extralaweaquequierasquesea**~
+![xdd](/img/dyg.png)
 
-DyGFramesEX es un bot para Facebook escrito en Javascript para NodeJS. El código principal publica un frame por cada ejecución.
+DyGFramesEX
+-----
+DyGFramesEX es un bot escrito en javascript que publica un frame cada x minuto en facebook.
 
 ##### Contenidos
 * [Requerimientos](#requerimientos)
@@ -16,6 +17,7 @@ DyGFramesEX es un bot para Facebook escrito en Javascript para NodeJS. El códig
 
 
 ## Requerimientos
+* Token de Acceso de Facebook para tu página.
 * [NodeJS](https://nodejs.org)
 * yarn o npm
 * [ffmpeg](https://www.ffmpeg.org/)
