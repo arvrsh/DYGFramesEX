@@ -1,8 +1,18 @@
-![xdd](/img/dyg.png)
+<img src="./img/dyg.png" alt="drawing" width="300"/>
 
 DyGFramesEX
 -----
 DyGFramesEX es un bot escrito en javascript que publica un frame cada x minuto en facebook.
+
+No puedo hacerme el larry con la idea, ya que este bot está inspirado en la famosa página de facebook [Every Tom And Jerry Frame in Order](https://fb.com/etjfo) y [Every SpongeBob Frame in Order](https://fb.com/EverySpongeInOrder).
+
+Tambien agradecer a mis amigos que me weberon caleta para que lo hiciera y que yo sé que en el fondo pensaron que no seria capaz de hacer la wea pero igual le puse color. 👽
+
+Lo cree especialmente para la Serie [Diego y Glot](https://13.cl/now), pero agarró vuelo así que lo volví un código más ordenadado y "estandar" para mi cabeza.
+
+La versión original está hecha en python3, pero instalar todas las bibliotecas necesarias es un real cacho ya que se requiere un virtualenv,  bla bla bla ...
+
+TL;DR: Los pulentos serán los ultimos en usar la versión de python, desde ahí en adelante se utilizará este código. 😉 
 
 ##### Contenidos
 * [Requerimientos](#requerimientos)
