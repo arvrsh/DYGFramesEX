@@ -1,7 +1,9 @@
-<img src="./img/dyg.png" alt="drawing" width="300"/>
+<center>
+<img src="./img/dyg.png" alt="drawing" width="500"/>
+</center>
 
-DyGFramesEX
 -----
+
 DyGFramesEX es un bot escrito en javascript que publica un frame cada x minuto en facebook.
 
 No puedo hacerme el larry con la idea, ya que este bot está inspirado en la famosa página de facebook [Every Tom And Jerry Frame in Order](https://fb.com/etjfo) y [Every SpongeBob Frame in Order](https://fb.com/EverySpongeInOrder).
