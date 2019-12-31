@@ -5,7 +5,23 @@ const FB = require('fb')["default"];
 FB.options({ version: 'v5.0' });
 FB.setAccessToken(process.env.FB_TOKEN);
 
+/** Comentar publicación
+ * @param {string} postid 
+ * @param {string} message
+*/
+exports.fbComment = (postid, message) => {
+  return new Promise((resolve, reject) => {
+    FB.api(`/${postid}/comments`, 'post', { message: message}, res => {
+      if(!res || res.error) return reject(!res ? 'error' : res.error);
+      return resolve(res);
+    });
+  });
+};
 
+/** Crear album 
+ * @param {string} albumname
+ * @param {number} season
+ */
 exports.fbCreateAlbum = (albumname, season) => {
   let _name = `Episodio: ${albumname}, Temporada ${season}`;
   return new Promise((resolve, reject) => {
@@ -67,6 +83,7 @@ exports.fbPostImage = (file, message, album = null) => {
   });
 };
 
+/** get reactions of post object and some weas  */
 exports.fbGetReactions = (objectid) => {
   return new Promise((resolve, reject) => {
     FB.api(`/${objectid}`,{ fields: ['reactions.summary(total_count)']}, res => {
