@@ -5,7 +5,7 @@ const std = require('./core/_std');
 /*******************************
  * VARIABLES INTERESANTES 
 *******************************/
-let _comentar = process.env.FB_COMENTAR;
+let _comentar = false;
 let _interval = process.env.FB_COMENTAR_INTERVALO;
 let _comentarios = [
     "Recuerda que este episodio lo puedes encontrar en 📺 https://13.cl/now 📺",
