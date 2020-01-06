@@ -9,7 +9,7 @@ let _comentar = process.env.FB_COMENTAR;
 let _interval = process.env.FB_COMENTAR_INTERVALO;
 let _comentarios = [
     "Recuerda que este episodio lo puedes encontrar en 📺 https://13.cl/now 📺",
-    "Este bot se mantiene con el misero vuelto del pan, si deseas aportar puedes hacerlo desde un dolar en el siguiente link ❤️ https://www.patreon.com/arvrsh ❤️  uwu, te lo agradeceria un montón y te mencionaré todas las semanas en un post dedicado a la pipol de patreon. 💞",
+    "Este bot se mantiene con el misero vuelto del pan, si lo deseas, puedes aportar en el siguiente link 💓 https://app.payku.cl/p?a=3446p324a 💓, serás mencionado todas las semanas durante el mes que aportaste en un post dedicado a quienes apoyan este show 🤡",
 ];
 
 
