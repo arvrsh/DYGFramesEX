@@ -7,7 +7,10 @@ const std = require('./core/_std');
 *******************************/
 let _comentar = process.env.FB_COMENTAR;
 let _interval = process.env.FB_COMENTAR_INTERVALO;
-let _comentario = "Recuerda que este episodio lo puedes encontrar en 📺 https://13.cl/now 📺";
+let _comentarios = [
+    "Recuerda que este episodio lo puedes encontrar en 📺 https://13.cl/now 📺",
+    "Este bot se mantiene con el misero vuelto del pan, si deseas aportar puedes hacerlo desde un dolar en el siguiente link ❤️ https://www.patreon.com/arvrsh ❤️  uwu, te lo agradeceria un montón y te mencionaré todas las semanas en un post dedicado a la pipol de patreon. 💞",
+];
 
 
 main();
@@ -38,10 +41,10 @@ async function post_frame() {
 
     facebook.fbPostImage(_framename, _message, null) // null means no album 
         .then((res) => {
-            console.log(_message);
-            console.log('[f]: ', res.id);
+            console.log(_message, res.id);
             if (_comentar && _data.frame % _interval == 0) {
-                comentar_post(res.id, _comentario);
+                let _comentario = Math.floor(Math.random() * _comentarios.length)
+                comentar_post(res.id, _comentarios[_comentario]);
             }
             next_frame(_data, _countepisode, _countseasons, _count);
         })
