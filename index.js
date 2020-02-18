@@ -2,17 +2,23 @@ const facebook = require('./core/_facebook');
 const database = require('./core/_db');
 const std = require('./core/_std');
 
-/*******************************
- * VARIABLES INTERESANTES 
+/******************************
+ * _comentar = si queri que la wea comente por ti cada x frame
+ * _interval = los frames multiplos de _interval serán comentados por el bot
+ * _comentarios = arreglo de comentarios, cada comentario en un string distinto 
+ * Los comentarios se haran de forma random... ahí ve tu si queri que comente de otra forma xddd
 *******************************/
-let _comentar = process.env.FB_COMENTAR;
-let _interval = process.env.FB_COMENTAR_INTERVALO;
+let _comentar = false;
+let _interval = 5;
 let _comentarios = [
-    "Recuerda que este episodio lo puedes encontrar en 📺 https://13.cl/now 📺",
-    "Este bot se mantiene con el misero vuelto del pan, si lo deseas, puedes aportar en el siguiente link 💓 https://app.payku.cl/p?a=3446p324a 💓, serás mencionado todas las semanas durante el mes que aportaste en un post dedicado a quienes apoyan este show 🤡",
+    "Pone tus comentarios entero pulentos aquí",
+    "Pone tu otro comentario bacan aquí"
 ];
 
-
+/** Función principal
+ * creo que esto no debería funcionar así, not sure 
+ * mi profe me mataria si cacha que hice esto así pero si lo borrai explota lul xddd
+ */
 main();
 
 /** Main process  */
