@@ -1,17 +1,16 @@
 {
   "name": "dygframes_ex",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": {
-    "name": "Álvaro Godoy",
-    "email": "alvarogodoyg@gmail.com",
+    "name": "arvr_sh",
     "url": "https://arvrsh.github.io"
   },
   "homepage": "https://arvrsh.github.io/projects/edgfio",
   "repository": "github:arvrsh/DYGFramesEX",
   "private": true,
   "scripts": {
-    "post": "node index.js"
+    "post": "./run_post"
   },
   "license": "MIT",
   "dependencies": {

@@ -280,8 +280,8 @@ $ node index.js
 ```
 ¿Quieres publicar más de una vez?
 ```bash
-$ chmod +x run.sh
-$ ./run.sh n
+$ chmod +x run_post
+$ ./run_post n
 # donde n es la cantidad de frames que quieres publicar.
 ```
 > Esto lo ejecutará n veces
@@ -297,9 +297,9 @@ En lo personal recomiendo utilizar [crontab de unix](https://es.wikipedia.org/wi
     ```bash
     */10 * * * * cd /carpeta/del/bot/ && node index.js >> logs.txt
     ```
-    Puedes modificarlo para usar `run.sh`.
+    Puedes modificarlo para usar `run_post`.
     ```bash
-    */10 * * * * cd /carpeta/del/bot/ && bash run.sh n
+    */10 * * * * cd /carpeta/del/bot/ && bash run_post n
     ```
     Ambos métodos guardaran información en un log.
 

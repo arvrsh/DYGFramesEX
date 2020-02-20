@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z $1 ];
+then
+  echo "Se debe ingresar la cantida de frames que deseas publicar"
+  echo "Ejemplo:     ./run 1"
+  exit 0;
+fi
+for (( num=1; num <= $1; num++ ))
+do
+  node ./src/index.js >> logs.txt
+done
