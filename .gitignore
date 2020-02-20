@@ -2,6 +2,7 @@ database.json
 vid/*
 !vid/extract.sh
 .vscode/
+logs.txt
 yarn.lock
 # Logs
 logs
