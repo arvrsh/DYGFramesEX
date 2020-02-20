@@ -55,7 +55,7 @@ async function post_frame() {
             next_frame(_data, _countepisode, _countseasons, _count);
         })
         .catch((err) => {
-            console.error("[x]", err);
+            std.logError(err);
         });
 }
 

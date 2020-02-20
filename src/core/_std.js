@@ -8,9 +8,9 @@ let folder = process.env.VID_FOLDER;
  * @param {numner} frame frame
  * @async
  */
-exports.getFrameName = (season, episode, frame) =>{
+exports.getFrameName = (season, episode, frame) => {
   return new Promise((resolve, rejected) => {
-    return resolve(`./${folder}/${season}/${episode}/${frame.toString().padStart(4,'0000')}.jpg`);
+    return resolve(`./${folder}/${season}/${episode}/${frame.toString().padStart(4, '0000')}.jpg`);
   });
 };
 /** Cuenta la cantidad de frames
@@ -20,8 +20,20 @@ exports.getFrameName = (season, episode, frame) =>{
 exports.contarFrames = (season, episode) => {
   return new Promise((resolve, reject) => {
     fs.readdir(`${folder}/${season}/${episode}`, (err, files) => {
-      if(err) return reject(err.message);
+      if (err) return reject(err.message);
       return resolve(files.length);
     });
   });
 };
+
+/** Log Error
+ * @param error Error
+*/
+exports.logError = (err) => {
+  console.log(
+    "---------------------- [INI ERROR] ---------------------\n",
+    err,
+    "\n---------------------- [FIN ERROR] ---------------------\n"
+  );
+  return console.error(err.code);
+}
