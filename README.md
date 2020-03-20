@@ -4,6 +4,10 @@
 <img src="./img/dyg.png" alt="drawing" width="500"/>
 </center>
 
+> Hola wapos, una forma bella de aportar
+> Si quieres aprender a programar por tu cuenta y necesitas un buen empujón, puedes utilizar mi link referido de platzi, te regalan un mes si te registras con el [siguiente enlace](https://platzi.com/c/arvrsh/)
+
+
 -----
 > A T E N C I Ó N !
 >
